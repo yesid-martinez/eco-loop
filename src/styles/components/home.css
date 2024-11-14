@@ -1,0 +1,315 @@
+#home{
+    height: 100dvh;
+
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas: 
+        "greeting"
+        "challenges"
+        "topUsers"
+        "leaderboard"
+        "recyclableItems"
+        "bottomNav";
+
+    gap: .5rem;
+    background-color: var(--color-bg-base);
+}
+
+#gradientContainer{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    img{
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+#homeUserGreeting{
+    grid-area: greeting;
+    z-index: 100;
+    
+    display: flex;
+    align-items: end;
+    margin: 1rem 4vw 0 4vw;
+
+    img{
+        width: 4rem;
+        height: 4rem;
+        margin: 0 8px;
+        border-radius: 999px;
+    }
+
+    div{
+        display: flex;
+        flex-direction: column;
+        height: 4rem;
+        justify-content: center;
+
+
+        text-align: start;
+        color: var(--color-text-secondary);
+
+        span{
+            font-weight: bold;
+        }
+    }
+}
+
+#homeChallenges{
+    grid-area: challenges;
+    z-index: 100;
+    
+    margin: 0 4vw;
+    font-size: 12px;
+    min-height: 6em;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    
+    padding: 0 1em;
+    text-align: start;
+    
+    background-color: var(--color-bg-primary);
+    border-radius: 1rem;
+
+    div:first-of-type{
+        img{
+            width: 3.5rem;
+            place-self: center;
+        }
+    }
+    
+
+    div:nth-of-type(2){
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        padding: 0 .25em;
+    }
+}
+
+.continueBtn{
+    width: 3rem;
+    height: 3rem;
+    justify-self: center;
+
+    background-color: var(--color-bg-secondary);
+    border: none;
+    border-radius: 999px;
+
+    img{
+        width: 100%;
+        scale: .5;
+    }
+}
+
+#homeTopUsers{
+    grid-area: topUsers;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 4vw;
+    
+    background-color: var(--color-bg-primary);
+    border-radius: 1rem;
+
+    header{
+        display: flex;
+        align-items: center;
+        margin: 0.5rem 2rem;
+    }
+    
+    #topUsersList{
+
+        ul{
+            display: flex;
+            justify-content: space-around;
+            padding: .5rem 1rem;
+
+            div:first-of-type{
+                height: 2.5rem;
+
+                p{
+                    margin-top: -.6rem;
+                    font-weight: bold;
+                    font-size: .9rem;
+                }
+
+                img{
+                    height: 1rem;
+                }
+            }
+            
+            div:nth-of-type(2){
+                img{
+                    width: 4.5rem;
+                    border-radius: 999px;
+
+                    box-shadow: var(--shadow-base);
+                }
+            }
+
+            li:nth-of-type(2){
+                div:first-of-type{
+                    img{
+                        scale: 3.5;
+                        margin-bottom: -1rem;
+                    }
+                }
+
+                div:nth-of-type(2){
+                    img{
+                        width: 6rem;
+                    }
+                }
+            }
+
+            h3{
+                font-size: 1rem;
+            }
+
+            p{
+                font-size: .7rem;
+                color: var(--color-text-emphasis);
+            }
+        }
+    }
+}
+
+#homeLeaderboard{
+    grid-area: leaderboard;
+    z-index: 100;
+    
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    margin: 0 4vw;
+    font-size: 12px;
+    padding: 0 1.5em;
+    
+    background-color: var(--color-bg-primary);
+    border-radius: 1rem;
+    min-height: 4rem;
+
+    h2{
+        width: 80%;
+        place-self: center;
+    }
+}
+
+
+#homeRecyclableItems{
+    grid-area: recyclableItems;
+    position: relative;
+
+    font-size: 12px;
+    max-height: 6rem;
+    margin: 0 4vw;
+    border-radius: 1rem;
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    h2{
+        width: 100%;
+        position: absolute;
+        top: 50%;  
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        
+        display: flex;
+        justify-content: center;
+        gap: .5rem;
+
+        /* Text shadow */
+        text-shadow: 0 0 1px var(--color-black), 0 0 1px var(--color-white), 0 0 3px var(--color-black), 0 0 2px var(--color-white);
+        letter-spacing: .1rem;
+
+        text-align: start;
+        color: var(--color-text-secondary);
+
+
+        span{
+            display: grid;
+            margin: auto 0;
+        }
+        img{
+            width: 1.5rem;
+            height: 1.5rem;
+            
+        }
+    }
+
+    #gradientBg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;  
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        background: var(--gradient-primary-glass);
+        box-shadow: var(--shadow-base);
+        border-radius: 1rem;
+
+        /* There is a text required to use the gradient */
+        color: #ffffff00; /* Hidden */
+    }
+
+
+}
+
+#homeBottomNav{
+    grid-area: bottomNav;
+    z-index: 100;
+
+    font-size: 12px;
+    border-top: 1px solid var(--color-hr);
+
+    ul{
+        display: flex;
+        justify-content: space-around;
+        height: 100%;
+        padding: .1rem 0;
+        align-items: center;
+
+
+        div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: var(--color-text-emphasis);
+        }
+
+        div:nth-of-type(2){
+            min-width: 4rem;
+            min-height: 4rem;
+            
+            border-radius: 999px;
+            background-color: var(--color-bg-secondary);
+
+            li{
+                display: grid;
+                grid-template-columns: auto;
+            }
+        }
+
+        img{
+            width: 2em;
+            place-self: center;
+        }
+    }
+}
