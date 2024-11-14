@@ -1,11 +1,14 @@
 import './App.css'
 
+//Components
+import Home from './components/Home/Home'
+
 function App() {
 
   return (
     <>
-      <div className="textContainer">
-        <h1>Hello EcoLoop!</h1>
+      <div id="app">
+        <Home />
       </div>
     </>
   )
